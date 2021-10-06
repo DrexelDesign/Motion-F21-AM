@@ -9,6 +9,71 @@
   ],
   "creatorBuild" : "34214",
   "files" : {
+    "\/assets\/flat-robots-collection\/209837-P08AK6-393.ai" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/flat-robots-collection\/209837-P08AK6-393.ai",
+      "oF" : 0
+    },
+    "\/assets\/flat-robots-collection\/209837-P08AK7-880.eps" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/flat-robots-collection\/209837-P08AK7-880.eps",
+      "oF" : 0
+    },
+    "\/assets\/flat-robots-collection\/209837-P08AK8-605.jpg" : {
+      "ft" : 16384,
+      "iS" : 390863,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/flat-robots-collection\/209837-P08AK8-605.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/assets\/flat-robots-collection\/License free.txt" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/flat-robots-collection\/License free.txt",
+      "oF" : 0
+    },
+    "\/assets\/flat-robots-collection\/License premium.txt" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/flat-robots-collection\/License premium.txt",
+      "oF" : 0
+    },
+    "\/assets\/robot.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/robot.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg-demo.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg-demo.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/deploy\/css\/styles.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -40,6 +105,14 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/dev\/content\/svg-demo.kit" : {
+      "cB" : 0,
+      "ft" : 2048,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/dev\/content\/svg-demo.html",
+      "oF" : 0
+    },
     "\/dev\/global\/head.kit" : {
       "cB" : 0,
       "ft" : 2048,
@@ -65,7 +138,7 @@
       "oF" : 2
     },
     "\/dev\/js\/scripts.js" : {
-      "bF" : 0,
+      "bF" : 4,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
@@ -220,6 +293,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/dev\/scss\/layout\/_header.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/dev\/scss\/sections\/_svg-demo.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/dev\/scss\/sections\/_svg-demo.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -1039,7 +1127,7 @@
         "optionString" : "{'allowParens': true}"
       },
       "no-console" : {
-        "active" : 1,
+        "active" : 0,
         "optionString" : "{'allow': ['warn', 'error']}"
       },
       "no-const-assign" : {

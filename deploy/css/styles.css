@@ -352,6 +352,10 @@ template {
 /* =============
     Base
 ============= */
+body {
+  background-color: #000;
+}
+
 figure {
   margin: 0;
   padding: 0;
@@ -365,21 +369,6 @@ ul li {
   list-style: none;
 }
 
-.container-grid {
-  display: grid;
-  grid-template-areas: ". grid-content .";
-  grid-template-columns: 15px auto 15px;
-  height: 100vh;
-}
-@media (min-width: 1200px) {
-  .container-grid {
-    grid-template-columns: auto 1200px auto;
-  }
-}
-.container-grid > div {
-  grid-area: grid-content;
-}
-
 /* =============
     Typography
 ============= */
@@ -391,11 +380,6 @@ h1, h2, h3, h4 {
 p {
   margin: 0;
   padding: 0;
-}
-
-h1 {
-  font-size: 6.25rem;
-  color: red;
 }
 
 /* =============
@@ -428,3 +412,33 @@ textarea {
 /* =============
     Footer
 ============= */
+#svg-demo {
+  display: grid;
+  grid-template-columns: auto 80vw auto;
+  grid-template-areas: ". svg .";
+  height: 100vh;
+}
+@media (min-width: 768px) {
+  #svg-demo {
+    grid-template-columns: auto 70vw auto;
+  }
+}
+@media (min-width: 992px) {
+  #svg-demo {
+    grid-template-columns: auto 60vw auto;
+  }
+}
+@media (min-width: 1200px) {
+  #svg-demo {
+    grid-template-columns: auto 50vw auto;
+  }
+}
+#svg-demo > div {
+  grid-area: svg;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#svg-demo > div svg {
+  border: 1px solid red;
+}
