@@ -1,0 +1,39 @@
+#preloader{
+
+    display: grid;
+    grid-template-columns: auto 90vw auto;
+    grid-template-areas: ". preloader .";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: 5000;
+    background-color: $darkBlue;
+
+    @include md{
+        grid-template-columns: auto 80vw auto;
+    }
+
+    @include lg{
+        grid-template-columns: auto 70vw auto;
+    }
+
+    @include xl{
+        grid-template-columns: auto 50vw auto;
+    }
+
+    >div{
+
+        grid-area: preloader;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 3px solid red;
+
+
+        svg{
+             width: 50%;
+        }
+    }
+}
