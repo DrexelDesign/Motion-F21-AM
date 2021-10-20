@@ -15,7 +15,7 @@ const mainTL = gsap.timeline();
 
 function growProgress(){
        const tl = gsap.timeline();
-       tl.from("#fill",{duration: 2, scaleX:0});
+       tl.from("#fill",{duration: 8, scaleX:0});
        return tl;
 }
 
@@ -25,11 +25,25 @@ function fadeOutline(){
        return tl;
 }
 
+function ballDrop(){
+       const tl = gsap.timeline();
+
+       return tl;
+}
+
+function textFadeIn(){
+       const tl = gsap.timeline();
+       
+       return tl;
+}
+
 
 
 
 mainTL.add(fadeOutline())
-       .add(growProgress());
+       .add(growProgress())
+       .add(ballDrop())
+       .add(textFadeIn());
 
 
 
