@@ -1,4 +1,7 @@
 import { gsap } from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
+
+gsap.registerPlugin(GSDevTools);
 
 
 const mainTL = gsap.timeline();
@@ -27,6 +30,9 @@ function fadeOutline(){
 mainTL.add(fadeOutline())
        .add(growProgress());
 
+
+
+GSDevTools.create();
 
 
 
