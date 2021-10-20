@@ -12,10 +12,10 @@
 <circle id="ball-3" cx="590" cy="360" r="24" fill="#E0FBFC"/>
 </g>
 <g id="progress-bar">
-<rect id="fill" x="414" y="431" width="345" height="11" fill="#EE6C4D"/>
-<rect id="outline" x="415" y="432" width="343" height="11" stroke="white" stroke-width="2"/>
+<rect id="fill" x="422" y="430" width="345" height="11" fill="#EE6C4D"/>
+<rect id="outline" x="423" y="431" width="343" height="11" stroke="white" stroke-width="2"/>
 </g>
-<rect id="container_2" x="403.5" y="236.5" width="382" height="182" stroke="black"/>
+<rect id="blackOutline" x="403.5" y="236.5" width="382" height="182" stroke="black"/>
 </g>
 </g>
 </svg>
