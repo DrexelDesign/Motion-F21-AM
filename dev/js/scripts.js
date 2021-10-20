@@ -1,7 +1,8 @@
 import { gsap } from "gsap";
 import { GSDevTools } from "gsap/GSDevTools";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
-gsap.registerPlugin(GSDevTools);
+gsap.registerPlugin(GSDevTools, DrawSVGPlugin);
 
 
 const mainTL = gsap.timeline();
@@ -20,7 +21,7 @@ function growProgress(){
 
 function fadeOutline(){
        const tl = gsap.timeline();
-       tl.from("#outline",{duration: 2, alpha:0});
+       tl.from("#outline",{duration: 2, drawSVG:"0%"});
        return tl;
 }
 
