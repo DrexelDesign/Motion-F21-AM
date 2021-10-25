@@ -37,11 +37,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
 
-        svg{
-            //  width: 50%;
-            // border: 3px solid red;
+        section{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            h1{
+                margin-top: 20%;
+                color: $white;
+                font-weight: 300;
+                font-size: rem-calc(30);
+            }
         }
     }
 }
