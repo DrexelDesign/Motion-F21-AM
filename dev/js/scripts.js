@@ -11,7 +11,7 @@ const mainTL = gsap.timeline();
 const aniTime = 0.5;
 
 gsap.set(".ball",{transformOrigin:"50% 50%", xPercent:-50, yPercent: -50});
-gsap.set("#ball-jump",{transformOrigin: "center"});
+// gsap.set("#ball-jump",{transformOrigin: "center"});
 
 // --------------
               // the 3 lines below do the same as the line above
@@ -56,16 +56,19 @@ function ballJumping(){
          .to("#ball-1",{duration:aniTime,x:"-=158", scale:1},"-=50%")
          .to("#ball-2",{duration:aniTime,x:"-=158", scale:1},"-=50%")
          .to("#ball-3",{duration:aniTime,x:"-=158", scale:1},"-=50%");
-
-
        return tl;
 }
+
+
 
 mainTL.add(ballDrop())
        .add(ballJumping());
 
 
-MotionPathHelper.create("#ball-1");
+
+       // gsap.to("#ball-1",{duration: aniTime, motionPath:{path:"#path-1", align:"#path-1", selected: true}, scale:0.5, ease: "power4.out"});
+       // MotionPathHelper.create("#ball-1");
+
 
 GSDevTools.create();
 
