@@ -393,11 +393,6 @@ p {
   padding: 0;
 }
 
-h1 {
-  font-size: 6.25rem;
-  color: red;
-}
-
 /* =============
     Buttons
 ============= */
@@ -428,3 +423,11 @@ textarea {
 /* =============
     Footer
 ============= */
+#stopMotion {
+  height: 100vh;
+}
+#stopMotion > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
