@@ -1,4 +1,4 @@
-#clipPath{
+#clipPath-container{
 
     display: grid;
     grid-template-columns: auto 70vw auto;
@@ -12,6 +12,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        svg{
+            width: 100%;
+        }
 
     }
 
