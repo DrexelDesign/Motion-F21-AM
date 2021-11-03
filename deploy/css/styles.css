@@ -428,3 +428,16 @@ textarea {
 /* =============
     Footer
 ============= */
+#clipPath {
+  display: grid;
+  grid-template-columns: auto 70vw auto;
+  grid-template-areas: ". clipPath .";
+  height: 100vh;
+}
+#clipPath > div {
+  grid-area: clipPath;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
