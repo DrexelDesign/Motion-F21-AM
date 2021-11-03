@@ -7,10 +7,12 @@ import { MotionPathHelper } from "gsap/MotionPathHelper";
 
 gsap.registerPlugin(GSDevTools, DrawSVGPlugin,TextPlugin,MotionPathPlugin,MotionPathHelper);
 
+gsap.set("#progress-bar",{transformOrigin:"center"});
+
 const mainTL = gsap.timeline();
 const aniTime = 0.5;
 
-gsap.set(".ball",{transformOrigin:"50% 50%", xPercent:-50, yPercent: -50});
+// gsap.set(".ball",{transformOrigin:"50% 50%", xPercent:-50, yPercent: -50});
 // gsap.set("#ball-jump",{transformOrigin: "center"});
 
 // --------------
@@ -34,8 +36,6 @@ function ballDrop(){
               .from("#welcome-text", {duration: aniTime, autoAlpha:0, ease: "none"})
               .to("#welcome-text", {duration: aniTime, text: "LOADING", ease: "none"});
 
-
-
        // --------------
               // the 3 lines below do the same as the line above
               // tl.from("#ball-1",{duration: 0.5, y:"-=200", ease: "bounce.out", autoAlpha:0});
@@ -50,19 +50,42 @@ function ballDrop(){
 
 function ballJumping(){
        const tl = gsap.timeline({repeat:3});
-       tl.to("#ball-1",{duration: aniTime, motionPath:{path:"#path-1", align:"#path-1"}, scale:0.5, ease: "power4.out"})
-         .to("#ball-2",{duration: aniTime, motionPath:{path:"#path-2", align:"#path-2"}, scale:0.5, ease: "power4.out"},"-=75%")
-         .to("#ball-3",{duration: aniTime, motionPath:{path:"#path-3", align:"#path-3"}, scale:0.5, ease: "power4.out"},"-=75%")
+       tl.to("#ball-1",{duration: aniTime, motionPath:{path:"#path-1", align:"self"}, scale:0.5, ease: "power4.out"})
+         .to("#ball-2",{duration: aniTime, motionPath:{path:"#path-2", align:"self"}, scale:0.5, ease: "power4.out"},"-=75%")
+         .to("#ball-3",{duration: aniTime, motionPath:{path:"#path-3", align:"self"}, scale:0.5, ease: "power4.out"},"-=75%")
          .to("#ball-1",{duration:aniTime,x:"-=158", scale:1},"-=50%")
          .to("#ball-2",{duration:aniTime,x:"-=158", scale:1},"-=50%")
          .to("#ball-3",{duration:aniTime,x:"-=158", scale:1},"-=50%");
        return tl;
 }
 
+function barGrow(){
+       const tl = gsap.timeline(); 
+       tl.from("#fill",{duration:6, scaleX:0, ease:"none"})
+       .to("#welcome-text",{duration: aniTime, text:"COMPLETE", ease:"none"});
+       return tl;
+}
+
+function flipBar(){
+       const tl = gsap.timeline(); 
+       tl.to("#progress-bar",{duration: aniTime, rotate: 90},"start-same")
+       .to("#welcome-text",{duration: aniTime, alpha: 0, ease:"none"},"start-same")
+       .to("#ball-1",{duration:aniTime, y:"-=200", x:"-=600", autoAlpha:0, scale:0},"-=90%")
+       .to("#ball-2",{duration:aniTime, y:"-=100", x:"+=300", autoAlpha:0, scale:0},"-=90%")
+       .to("#ball-3",{duration:aniTime, y:"-=10", x:"+=200", autoAlpha:0, scale:0},"-=80%")
+       .to("#progress-bar",{duration:aniTime,scaleX:10},"scaleBar")
+       .to("#outline",{duration:aniTime,autoAlpha:0},"scaleBar")
+       .to("#progress-bar",{duration:aniTime,scaleY:150},"-=50%");
+       return tl;
+}
+
+
 
 
 mainTL.add(ballDrop())
-       .add(ballJumping());
+       .add(ballJumping(),"preloader-info")
+       .add(barGrow(),"preloader-info")
+       .add(flipBar());
 
 
 
