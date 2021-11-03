@@ -12,6 +12,8 @@ MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
 gsap.set("#progress-bar",{transformOrigin:"center"});
 
+gsap.to("body",{duration:1, backgroundColor:"#000"});
+
 const mainTL = gsap.timeline();
 const aniTime = 0.5;
 const heroHeight = document.querySelector("#hero");
@@ -27,7 +29,6 @@ const heroHeight = document.querySelector("#hero");
 // --------------
 
 // gsap.set("#line-2",{scaleX:-1,transformOrigin: "center center"});
-
 
 function ballDrop(){
        const tl = gsap.timeline();
@@ -49,8 +50,6 @@ function ballDrop(){
 
        return tl;
 }
-
-
 
 function ballJumping(){
        const tl = gsap.timeline({repeat:3});
@@ -96,7 +95,6 @@ function heroAnimation(){
        .from("#hero h2",{duration:1, alpha:0, y:"+=200"}, "madeUp");
        return tl;
 }
-
 
 mainTL.add(ballDrop())
        .add(ballJumping(),"preloader-info")
