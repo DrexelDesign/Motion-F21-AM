@@ -4,13 +4,17 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { MotionPathHelper } from "gsap/MotionPathHelper";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
-gsap.registerPlugin(GSDevTools, DrawSVGPlugin,TextPlugin,MotionPathPlugin,MotionPathHelper);
+gsap.registerPlugin(GSDevTools, DrawSVGPlugin,TextPlugin,MotionPathPlugin,MotionPathHelper,MorphSVGPlugin);
+
+MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
 gsap.set("#progress-bar",{transformOrigin:"center"});
 
 const mainTL = gsap.timeline();
 const aniTime = 0.5;
+const heroHeight = document.querySelector("#hero");
 
 // gsap.set(".ball",{transformOrigin:"50% 50%", xPercent:-50, yPercent: -50});
 // gsap.set("#ball-jump",{transformOrigin: "center"});
@@ -50,9 +54,9 @@ function ballDrop(){
 
 function ballJumping(){
        const tl = gsap.timeline({repeat:3});
-       tl.to("#ball-1",{duration: aniTime, motionPath:{path:"#path-1", align:"self"}, scale:0.5, ease: "power4.out"})
+       tl.to("#ball-1",{duration: aniTime, motionPath:{path:"#path-1", align:"self"}, scale:0.5, ease: "power4.out", morphSVG:"#star"})
          .to("#ball-2",{duration: aniTime, motionPath:{path:"#path-2", align:"self"}, scale:0.5, ease: "power4.out"},"-=75%")
-         .to("#ball-3",{duration: aniTime, motionPath:{path:"#path-3", align:"self"}, scale:0.5, ease: "power4.out"},"-=75%")
+         .to("#ball-3",{duration: aniTime, motionPath:{path:"#path-3", align:"self"}, scale:0.5, ease: "power4.out", morphSVG:"#star-2"},"-=75%")
          .to("#ball-1",{duration:aniTime,x:"-=158", scale:1},"-=50%")
          .to("#ball-2",{duration:aniTime,x:"-=158", scale:1},"-=50%")
          .to("#ball-3",{duration:aniTime,x:"-=158", scale:1},"-=50%");
@@ -75,25 +79,35 @@ function flipBar(){
        .to("#ball-3",{duration:aniTime, y:"-=10", x:"+=200", autoAlpha:0, scale:0},"-=80%")
        .to("#progress-bar",{duration:aniTime,scaleX:10},"scaleBar")
        .to("#outline",{duration:aniTime,autoAlpha:0},"scaleBar")
-       .to("#progress-bar",{duration:aniTime,scaleY:150},"-=50%");
+       .to("#progress-bar",{duration:aniTime,scaleY:150},"-=50%")
+       .to("#preloader",{duration:0.25,alpha:0, onComplete:removePreloader});
        return tl;
 }
 
+function removePreloader(){
+       window.scrollTo(0,0);
+       gsap.set("#preloader",{display:"none"});
+}
 
+function heroAnimation(){
+       const tl = gsap.timeline(); 
+       tl.from("#hero >div article",{duration:1, alpha:0, y:-heroHeight.clientHeight})
+       .from("#hero h1",{duration:0.5, alpha:0, y:"+=200", rotation: 180}, "madeUp")
+       .from("#hero h2",{duration:1, alpha:0, y:"+=200"}, "madeUp");
+       return tl;
+}
 
 
 mainTL.add(ballDrop())
        .add(ballJumping(),"preloader-info")
        .add(barGrow(),"preloader-info")
-       .add(flipBar());
-
-
+       .add(flipBar())
+       .add(heroAnimation(),"-=50%");
 
        // gsap.to("#ball-1",{duration: aniTime, motionPath:{path:"#path-1", align:"#path-1", selected: true}, scale:0.5, ease: "power4.out"});
        // MotionPathHelper.create("#ball-1");
 
-
-GSDevTools.create();
+// GSDevTools.create();
 
 
 
@@ -152,20 +166,4 @@ GSDevTools.create();
 
 
 
-// const duration = 0.75;
 
-// const mainTL = gsap.timeline();
-
-// grab the element you want to get the height or width from
-
-// const heroHeight = document.querySelector("#hero");
-
-// console.log(heroHeight.clientHeight + "px is the height of the hero section");
-// console.log(heroHeight.clientWidth + "px is the width of the hero section");
-
-// name of the timeline | do you want to start at the end or the beginning of the timeline?  | What do you want to animate? | { how long is the animation? | what do you want to do?}
-// mainTL.to("#hero",{duration:2, alpha:0});
-
-// mainTL.from("#hero >div article",{duration:1, alpha:0, y:-heroHeight.clientHeight})
-//        .from("#hero h1",{duration:0.5, alpha:0, y:"+=200", rotation: 180}, "madeUp")
-//        .from("#hero h2",{duration:1, alpha:0, y:"+=200"}, "madeUp");
