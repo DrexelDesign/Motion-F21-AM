@@ -1,0 +1,32 @@
+#logo{
+    display: grid;
+    grid-template-columns: auto 90vw auto;
+    grid-template-areas: ". logo .";
+    height: 100vh;
+    width: 100%;
+
+    @include md{
+        grid-template-columns: auto 85vw auto;
+    }
+
+    @include lg{
+        grid-template-columns: auto 80vw auto;
+    }
+
+    @include xl{
+        grid-template-columns: auto 75vw auto;
+    }
+
+
+    >div{
+        grid-area: logo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        svg{
+                
+        }
+    }
+}

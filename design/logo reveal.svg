@@ -1,0 +1,18 @@
+<svg width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="logo reveal">
+<rect width="1440" height="1024" fill="white"/>
+<rect id="bg" width="1440" height="1024" fill="#F0F0F0"/>
+<g id="tekni-logo">
+<text id="e" fill="black" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="200" font-weight="900" letter-spacing="0em"><tspan x="550" y="518.359">e</tspan></text>
+<rect id="e-clip" x="513" y="383" width="264" height="139" fill="#00FF38"/>
+<text id="k" fill="black" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="200" font-weight="900" letter-spacing="0em"><tspan x="668" y="518.359">k</tspan></text>
+<text id="n" fill="black" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="200" font-weight="900" letter-spacing="0em"><tspan x="787" y="518.359">n</tspan></text>
+<path id="i" d="M943.945 518H910.938V412.336H943.945V518Z" fill="black"/>
+<path id="t-cross" d="M444 424.008L444 391L549.664 391L549.664 424.008L444 424.008Z" fill="black"/>
+<path id="t-down" d="M513 477H480V393H513V477Z" fill="black"/>
+<path id="dot" d="M914.078 400.492C910.693 403.487 909 407.328 909 412.016C909 416.703 910.693 420.544 914.078 423.539C917.464 426.534 921.858 428.031 927.262 428.031C932.665 428.031 937.06 426.534 940.445 423.539C943.831 420.544 945.523 416.703 945.523 412.016C945.523 407.328 943.831 403.487 940.445 400.492C937.06 397.497 932.665 396 927.262 396C921.858 396 917.464 397.497 914.078 400.492Z" fill="black"/>
+<path id="t-path" d="M497 477V621.5V657C497 717.199 545.801 766 606 766H818C878.199 766 927 717.199 927 657V518" stroke="#FF0000" stroke-width="34"/>
+<path id="dot-path" d="M979 501.5V387C979 372.641 967.359 361 953 361V361C938.641 361 927 372.641 927 387V412.804" stroke="#FF0000"/>
+</g>
+</g>
+</svg>

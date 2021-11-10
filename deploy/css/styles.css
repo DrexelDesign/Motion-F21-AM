@@ -365,24 +365,13 @@ ul li {
   list-style: none;
 }
 
-.container-grid {
-  display: grid;
-  grid-template-areas: ". grid-content .";
-  grid-template-columns: 15px auto 15px;
-  height: 100vh;
-}
-@media (min-width: 1200px) {
-  .container-grid {
-    grid-template-columns: auto 1200px auto;
-  }
-}
-.container-grid > div {
-  grid-area: grid-content;
-}
-
 /* =============
     Typography
 ============= */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 h1, h2, h3, h4 {
   margin: 0;
   padding: 0;
@@ -391,11 +380,6 @@ h1, h2, h3, h4 {
 p {
   margin: 0;
   padding: 0;
-}
-
-h1 {
-  font-size: 6.25rem;
-  color: red;
 }
 
 /* =============
@@ -428,3 +412,32 @@ textarea {
 /* =============
     Footer
 ============= */
+#logo {
+  display: grid;
+  grid-template-columns: auto 90vw auto;
+  grid-template-areas: ". logo .";
+  height: 100vh;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #logo {
+    grid-template-columns: auto 85vw auto;
+  }
+}
+@media (min-width: 992px) {
+  #logo {
+    grid-template-columns: auto 80vw auto;
+  }
+}
+@media (min-width: 1200px) {
+  #logo {
+    grid-template-columns: auto 75vw auto;
+  }
+}
+#logo > div {
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
