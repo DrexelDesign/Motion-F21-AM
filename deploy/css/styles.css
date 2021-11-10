@@ -365,6 +365,10 @@ ul li {
   list-style: none;
 }
 
+.hide {
+  display: none;
+}
+
 /* =============
     Typography
 ============= */
